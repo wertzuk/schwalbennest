@@ -1,0 +1,170 @@
+@import "abstracts";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
+
+$dark-violet: hsl(256, 26%, 20%);
+$grayish-blue: hsl(210, 12%, 94%);
+$vdark-violet: hsl(270, 9%, 17%);
+$dark-gr-violet: hsl(278, 4%, 50%);
+$vdark-light-gray: hsl(0, 0%, 98%);
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: $grayish-blue;
+}
+
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: $grayish-blue;
+  }
+  .logo {
+    font-size: 2.3rem;
+    font-weight: 700;
+    // width: 70%;
+    line-height: 1.5;
+    font-family: "Bad Script", cursive;
+    text-align: center;
+  }
+
+  .close {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
+.img-container {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+  height: 65vw;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+  max-width: 850px;
+}
+
+.active {
+  opacity: 1;
+}
+
+.main-content {
+  background-color: $dark-violet;
+  color: $vdark-light-gray;
+  padding: 2em;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  .heading {
+    text-align: center;
+    font-weight: 200;
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  display: block;
+
+  margin: 1.8rem auto 0.6rem;
+  padding: 0.5em 0;
+  font-family: inherit;
+
+  text-transform: uppercase;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.top-btn {
+  width: 150px;
+  color: white;
+  border: 2px solid white;
+}
+
+.booking-btn {
+  width: 60%;
+  max-width: 300px;
+  border: 2px solid black;
+  color: black;
+}
+
+.top-btn:hover {
+  background: black;
+}
+
+.text {
+  text-align: center;
+  p {
+    font-size: 14px;
+  }
+}
+.price-container {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  color: $vdark-violet;
+}
+
+.price-container > * + * {
+  margin-top: 1.5rem;
+}
+
+.price-item {
+  padding: 1em 1.5em;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $dark-gr-violet;
+  color: $vdark-violet;
+
+  .duration {
+    color: $dark-gr-violet;
+    font-size: 1.2rem;
+  }
+  .price {
+    margin-top: 1em;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-right: 0.3em;
+      color: $vdark-violet;
+    }
+  }
+}
+
+// @keyframes fade {
+//   0%,
+//   100% {
+//     background-image: url("../fotos/big-images/aussicht_balkon.jpg");
+//   }
+//   33% {
+//     background-image: url("../fotos/big-images/balkon.jpg");
+//   }
+//   67% {
+//     background-image: url("../fotos/big-images/wohnraum.jpg");
+//   }
+// }
