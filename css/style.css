@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
 *,
 *::before,
@@ -59,9 +59,58 @@ footer {
   margin: 0;
 }
 
+.calendar-container {
+  display: none;
+  text-align: center;
+  width: 85%;
+  margin: 2rem auto;
+}
+
+.calendar-container .weekdays {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  margin: 0.5rem 0;
+}
+
+.calendar-container .weekdays > * {
+  font-size: 14px;
+}
+
+.calendar-container .days {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  gap: 0.1rem;
+}
+
+.calendar-container .days > * {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: transparent;
+}
+
+.marked {
+  background: rgba(255, 0, 0, 0.2) !important;
+}
+
 body {
   font-family: "Karla", sans-serif;
   background-color: #eef0f2;
+  text-align: center;
+}
+
+.active {
+  display: block !important;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+header {
+  position: relative;
 }
 
 header nav {
@@ -81,23 +130,44 @@ header nav {
 header .logo {
   font-size: 2.3rem;
   font-weight: 700;
+  width: 70%;
   line-height: 1.5;
   font-family: "Bad Script", cursive;
   text-align: center;
 }
 
-header .close {
+header .close,
+header .hamburger {
   display: none;
 }
 
 header ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  padding: 2rem;
+  color: white;
+}
+
+header li a {
+  color: white;
 }
 
 header .menu {
   display: none;
+  top: 142.4px;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  background: #2b272f;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 3rem;
+}
+
+header .menu li {
+  margin-bottom: 2rem;
 }
 
 .img-container {
@@ -122,11 +192,9 @@ header .menu {
 }
 
 .main-content {
-  background-color: #2d2640;
+  background-color: #312947;
   color: #fafafa;
   padding: 2em;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 .main-content .heading {
@@ -148,10 +216,12 @@ header .menu {
   margin: 1.8rem auto 0.6rem;
   padding: 0.5em 0;
   font-family: inherit;
+  font-size: 14px;
   text-transform: uppercase;
   text-align: center;
   -webkit-transition: background 0.2s;
   transition: background 0.2s;
+  min-width: 150px;
 }
 
 .top-btn {
@@ -211,12 +281,12 @@ header .menu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #817a85;
+  color: #ada4b2;
   color: #2b272f;
 }
 
 .price-item .duration {
-  color: #817a85;
+  color: #ada4b2;
   font-size: 1.2rem;
 }
 
@@ -236,5 +306,77 @@ header .menu {
   font-weight: 700;
   margin-right: 0.3em;
   color: #2b272f;
+}
+
+.item {
+  position: relative;
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+}
+
+.item .description {
+  display: inline-block;
+  color: white;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 300;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+}
+
+.form-container {
+  padding-top: 2rem;
+  background: #fafafa;
+}
+
+.form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em 3em;
+  font-size: 14px;
+}
+
+.form-row label {
+  font-weight: 700;
+  width: 20%;
+}
+
+.form-row input {
+  width: 100%;
+  height: 35px;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #fafafa;
+  font-style: inherit;
+  padding: 0 1em;
+}
+
+@media only screen and (min-width: 700px) {
+  .price-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="script.js" defer></script>
+    <title>Ferienwohnung Schwalbennest</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Ferienwohnung Schwalbennest</div>
+        <div class="nav-toggle">
+          <img src="fotos/icon-hamburger.svg" alt="" class="hamburger active" />
+          <img src="fotos/icon-close.svg" alt="" class="close" />
+        </div>
+        <ul class="menu">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="wohnung.html">Die Wohnung</a></li>
+          <li><a href="anfrage.html">Bunchungsanfrage</a></li>
+          <li><a href="#">Links</a></li>
+          <li><a href="#">Impressum</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="form-container">
+      <h3>Anfrageformular - Zimmernachweis</h3>
+      <form>
+        <div class="form-row">
+          <!-- <label for="lastname">Name*</label> -->
+          <input
+            type="text"
+            name="lastname"
+            id="lastname"
+            placeholder="Name"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <!-- <label for="firstname">Vorname*</label> -->
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            placeholder="Vorname"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <!-- <label for="street">Straße*</label> -->
+          <input
+            type="text"
+            name="street"
+            id="street"
+            placeholder="Straße"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <!-- <label for="plz">PLZ / Ort*</label> -->
+          <input
+            type="text"
+            name="plz"
+            id="plz"
+            placeholder="PLZ / Ort*"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <!-- <label for="telefon">Telefon*</label> -->
+          <input
+            type="text"
+            name="telefon"
+            id="telefon"
+            placeholder="Telefon"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <!-- <label for="email">E-Mail-Adresse*</label> -->
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="E-Mail-Adresse*"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <!-- <label for="erwachsene">Anzahl Erwachsener*</label> -->
+          <input
+            type="text"
+            name="erwachsene"
+            id="erwachsene"
+            placeholder="Anzahl Erwachsener"
+          />
+        </div>
+
+        <div class="form-row">
+          <!-- <label for="children">Anzahl Kinder*</label> -->
+          <input
+            type="text"
+            name="children"
+            id="children"
+            placeholder="Anzahl Kinder"
+          />
+        </div>
+
+        <div class="form-row">
+          <!-- <label for="comment">Kommentar</label> -->
+          <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn booking-btn">Abschicken</button>
+      </form>
+    </div>
+  </body>
+</html>
