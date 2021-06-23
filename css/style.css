@@ -101,7 +101,7 @@ body {
   text-align: center;
 }
 
-.active {
+.selected {
   display: block !important;
 }
 
@@ -130,10 +130,10 @@ header nav {
 header .logo {
   font-size: 2.3rem;
   font-weight: 700;
-  width: 70%;
+  width: 50%;
   line-height: 1.5;
   font-family: "Bad Script", cursive;
-  text-align: center;
+  text-align: left;
 }
 
 header .close,
@@ -152,9 +152,9 @@ header li a {
 
 header .menu {
   display: none;
+  bottom: 0;
   top: 142.4px;
   left: 0;
-  bottom: 0;
   position: fixed;
   background: #2b272f;
   width: 100%;
@@ -182,6 +182,7 @@ header .menu li {
   position: absolute;
   width: 100%;
   opacity: 0;
+  left: 0;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
   max-width: 850px;
@@ -366,17 +367,9 @@ header .menu li {
   outline: none;
   border: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
   background: #fafafa;
   font-style: inherit;
   padding: 0 1em;
-}
-
-@media only screen and (min-width: 700px) {
-  .price-container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
 }
 /*# sourceMappingURL=style.css.map */

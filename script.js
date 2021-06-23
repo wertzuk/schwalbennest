@@ -13,7 +13,7 @@ setInterval(() => {
     i = 0;
   }
   images[i].classList.add("active");
-}, 7000);
+}, 2000);
 
 // --------------------------
 // Menü
@@ -24,9 +24,9 @@ const closed = document.querySelector(".close");
 const menu = document.querySelector(".menu");
 
 navToggle.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  closed.classList.toggle("active");
-  menu.classList.toggle("active");
+  hamburger.classList.toggle("selected");
+  closed.classList.toggle("selected");
+  menu.classList.toggle("selected");
   document.body.classList.toggle("no-scroll");
 });
 
