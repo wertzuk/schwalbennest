@@ -13,7 +13,7 @@ setInterval(() => {
     i = 0;
   }
   images[i].classList.add("active");
-}, 2000);
+}, 7000);
 
 // --------------------------
 // Menü
