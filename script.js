@@ -21,7 +21,7 @@ setInterval(() => {
 const navToggle = document.querySelector(".nav-toggle");
 const hamburger = document.querySelector(".hamburger");
 const closed = document.querySelector(".close");
-const menu = document.querySelector(".menu");
+const menu = document.querySelector(".menu-mobile");
 
 navToggle.addEventListener("click", () => {
   hamburger.classList.toggle("selected");

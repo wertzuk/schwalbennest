@@ -28,6 +28,14 @@ body {
   overflow: hidden;
 }
 
+.menu-desktop {
+  display: none;
+}
+
+a {
+  color: white;
+}
+
 header {
   position: relative;
   nav {
@@ -38,9 +46,9 @@ header {
     background-color: $grayish-blue;
   }
   .logo {
-    font-size: 2.3rem;
+    font-size: clamp(1.8rem, 5vw, 2rem);
     font-weight: 700;
-    width: 50%;
+    width: 80%;
     line-height: 1.5;
     font-family: "Bad Script", cursive;
     text-align: left;
@@ -53,36 +61,39 @@ header {
 
   ul {
     padding: 2rem;
-    color: white;
   }
+}
+
+//
+// Main-styling
+//
+main {
+  position: relative;
+}
+
+.menu-mobile {
+  display: none;
+  background: rgba($vdark-violet, 0.9);
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  z-index: 100;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 3rem;
+  transition: opacity 0.3s;
+
   li {
-    a {
-      color: white;
-    }
+    margin-bottom: 2rem;
   }
+}
 
-  .menu {
-    display: none;
-    background: rgba($vdark-violet, 0.9);
-    bottom: 0;
-    top: 129.6px;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    min-height: 500px;
-    z-index: 100;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1.5rem;
-    padding-top: 3rem;
-    transition: opacity 0.3s;
-
-    li {
-      margin-bottom: 2rem;
-    }
-    // display: none;
-  }
+.img-text {
+  background-color: $dark-violet;
 }
 
 .img-container {
@@ -97,6 +108,7 @@ header {
   position: absolute;
   width: 100%;
   opacity: 0;
+  top: 0;
   left: 0;
   transition: opacity 1s;
   // max-width: 850px;
@@ -208,11 +220,10 @@ footer {
   .description {
     position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
+    left: 1rem;
     color: white;
     padding-bottom: 0.3em;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
     text-transform: uppercase;
     font-size: 2rem;
     font-weight: 300;
@@ -250,38 +261,46 @@ footer {
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
+  nav {
+    // flex-direction: column;
+  }
   header {
     .logo {
-      width: 80%;
+      width: 50%;
     }
-    .menu {
-      top: 74.4px;
+    .nav-toggle {
+      display: none;
+    }
+    .menu-desktop {
+      display: flex;
+      a {
+        color: black;
+      }
     }
   }
-}
 
-@media only screen and (min-width: 800px) {
   .img-text {
+    position: relative;
     display: flex;
     flex-direction: row-reverse;
+    padding: 2rem;
     align-items: center;
-    position: relative;
     width: 100%;
     background: $dark-violet;
-    max-height: 600px;
+    // max-height: 600px;
     .img-container {
-      // all: initial;
-      width: 50%;
-      width: 80%;
+      min-width: 60%;
+      // height: 600px;
+      // max-height: 550px;
     }
     .image {
-      max-height: 100%;
+      // max-height: 100%;
       object-fit: cover;
-      max-height: 600px;
+      max-height: 550px;
     }
     .main-content {
-      width: 30%;
+      flex: 1;
     }
   }
 
