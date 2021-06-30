@@ -1,0 +1,38 @@
+.form-container {
+  margin: auto;
+  padding: 1.5rem 1rem;
+  background: white;
+  // box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  // border-radius: 10px;
+  // width: 70%;
+
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    font-size: 14px;
+    background: white;
+    input,
+    textarea {
+      margin: auto;
+      width: 100%;
+      max-width: 600px;
+      letter-spacing: 0.5px;
+    }
+    input {
+      height: 35px;
+      outline: none;
+      border: none;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      font-style: inherit;
+      padding: 0 1em;
+      background: white;
+      margin: auto;
+      &::placeholder {
+        font-style: italic;
+        font-size: 12px;
+      }
+    }
+  }
+}
