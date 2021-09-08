@@ -5,7 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
 
 $dark-violet: hsl(256, 27%, 22%);
-$grayish-blue: hsl(210, 12%, 94%);
+$grayish-blue: hsl(210, 40%, 92%);
 $vdark-violet: hsl(270, 9%, 17%);
 $dark-gr-violet: hsl(280, 4%, 54%);
 $vdark-light-gray: hsl(0, 0%, 98%);
@@ -50,16 +50,42 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6em 2em;
+    padding: 1em;
     background-color: $grayish-blue;
   }
   .logo {
-    font-size: 1.8rem;
+    font-size: clamp(1.7rem, 5vw, 2.1rem);
     font-weight: 700;
     width: 80%;
     line-height: 1.5;
     font-family: "Bad Script", cursive;
     text-align: left;
+  }
+
+  .menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 100;
+    height: 100vh;
+    width: 100%;
+    background: rgba($vdark-violet, 0.85);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 3rem;
+    transition: opacity 0.3s;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease-in-out;
+
+    li {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .menu.show {
+    transform: scaleY(1);
   }
 
   .close,
@@ -77,27 +103,6 @@ header {
 //
 main {
   position: relative;
-}
-
-.menu-mobile {
-  display: none;
-  background: rgba($vdark-violet, 0.9);
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  min-height: 500px;
-  z-index: 100;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1.5rem;
-  padding-top: 3rem;
-  transition: opacity 0.3s;
-
-  li {
-    margin-bottom: 2rem;
-  }
 }
 
 .img-text {
@@ -148,14 +153,13 @@ footer {
 
 .btn {
   display: block;
-
   margin: 1.8rem auto 0.6rem;
   padding: 0.5em 0;
   font-family: inherit;
   font-size: 14px;
   text-transform: uppercase;
   text-align: center;
-  transition: background 0.2s;
+  transition: 0.2s;
   min-width: 150px;
 }
 
@@ -172,24 +176,21 @@ footer {
   color: black;
 }
 
-.top-btn:hover {
-  background: black;
-}
-
 .text {
-  text-align: center;
   p {
+    text-align: center;
     font-size: 14px;
   }
 }
 .price-container {
-  margin: 2rem;
+  margin: 4rem 2rem;
   color: $vdark-violet;
 }
 
 .price-item {
-  margin-top: 1.5rem;
+  margin: 1.5rem auto;
   padding: 1em 1.5em;
+  max-width: 400px;
   background: white;
   border-radius: 10px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
@@ -220,8 +221,8 @@ footer {
 
 .grid-container {
   display: grid;
-  grid-gap: 0.1rem;
-  margin-bottom: 2rem;
+  grid-gap: 0.3rem;
+  // margin-bottom: 2rem;
 }
 
 .item {
@@ -244,16 +245,26 @@ footer {
 }
 
 .text-container {
-  background: white;
+  background: $grayish-blue;
   padding: 1.5em;
+  line-height: 1.6;
+  .text-container-heading {
+    padding: 0;
+  }
   .text {
-    text-align: left;
+    margin: 1rem auto 2rem;
+    max-width: 1000px;
+    text-align: center;
     padding: 1em 0;
     font-size: 14px;
-    line-height: 1.5;
     color: $dark-violet;
     opacity: 0.9;
   }
+
+  .main-text {
+    font-size: 16px;
+  }
+
   .personal-data {
     font-weight: bolder;
     padding: 1em 0;
@@ -269,8 +280,6 @@ footer {
 }
 
 footer {
-  // border-top-left-radius: 30px;
-  // border-top-right-radius: 30px;
   padding: 2em;
 }
 
@@ -283,20 +292,23 @@ footer {
     .nav-toggle {
       display: none;
     }
-    .menu-desktop {
-      display: flex;
-      a {
-        color: black;
-      }
-    }
   }
 
   nav {
+    padding-block: 3rem;
+
     display: flex;
     justify-content: space-between;
-    .menu-desktop {
+    align-items: center;
+
+    .menu {
+      all: unset;
       padding: 0;
+      display: flex;
+      align-items: center;
       li {
+        list-style: none;
+        margin: 0;
         margin-right: 2em;
         text-transform: uppercase;
         font-size: 14px;
@@ -320,12 +332,11 @@ footer {
     align-items: center;
     width: 100%;
     background: $dark-violet;
+    box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.3);
     .img-container {
       min-width: 60%;
       max-height: 450px;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      margin-right: 2rem;
+      margin: 0rem;
     }
     .image {
       object-fit: cover;
@@ -344,6 +355,47 @@ footer {
     .price-item {
       flex: 1;
       margin: 0 2rem;
+    }
+  }
+
+  .grid-container {
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+    .item {
+      transition: transform 0.2s;
+      width: 100%;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+
+    .item.clicked {
+      transform: scale(2);
+      z-index: 100;
+    }
+
+    img {
+      height: 100%;
+      // object-fit: cover;
+    }
+  }
+
+  .top-btn:hover {
+    background: black;
+  }
+
+  .booking-btn:hover {
+    background: $vdark-violet;
+
+    color: white;
+  }
+
+  .text-container {
+    .text {
+      text-align: left;
     }
   }
 }

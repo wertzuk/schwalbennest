@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  line-height: 1.6;
 }
 
 h1,
@@ -196,17 +197,50 @@ header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.6em 2em;
-  background-color: #eef0f2;
+  padding: 1em;
+  background-color: #e2ebf3;
 }
 
 header .logo {
-  font-size: 1.8rem;
+  font-size: clamp(1.7rem, 5vw, 2.1rem);
   font-weight: 700;
   width: 80%;
   line-height: 1.5;
   font-family: "Bad Script", cursive;
   text-align: left;
+}
+
+header .menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 100;
+  height: 100vh;
+  width: 100%;
+  background: rgba(43, 39, 47, 0.85);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 3rem;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+header .menu li {
+  margin-bottom: 3rem;
+}
+
+header .menu.show {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
 }
 
 header .close,
@@ -220,28 +254,6 @@ header ul {
 
 main {
   position: relative;
-}
-
-.menu-mobile {
-  display: none;
-  background: rgba(43, 39, 47, 0.9);
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  min-height: 500px;
-  z-index: 100;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1.5rem;
-  padding-top: 3rem;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-}
-
-.menu-mobile li {
-  margin-bottom: 2rem;
 }
 
 .img-text {
@@ -299,8 +311,8 @@ footer {
   font-size: 14px;
   text-transform: uppercase;
   text-align: center;
-  -webkit-transition: background 0.2s;
-  transition: background 0.2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   min-width: 150px;
 }
 
@@ -317,26 +329,20 @@ footer {
   color: black;
 }
 
-.top-btn:hover {
-  background: black;
-}
-
-.text {
-  text-align: center;
-}
-
 .text p {
+  text-align: center;
   font-size: 14px;
 }
 
 .price-container {
-  margin: 2rem;
+  margin: 4rem 2rem;
   color: #2b272f;
 }
 
 .price-item {
-  margin-top: 1.5rem;
+  margin: 1.5rem auto;
   padding: 1em 1.5em;
+  max-width: 400px;
   background: white;
   border-radius: 10px;
   -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
@@ -381,8 +387,7 @@ footer {
 .grid-container {
   display: -ms-grid;
   display: grid;
-  grid-gap: 0.1rem;
-  margin-bottom: 2rem;
+  grid-gap: 0.3rem;
 }
 
 .item {
@@ -407,17 +412,27 @@ footer {
 }
 
 .text-container {
-  background: white;
+  background: #e2ebf3;
   padding: 1.5em;
+  line-height: 1.6;
+}
+
+.text-container .text-container-heading {
+  padding: 0;
 }
 
 .text-container .text {
-  text-align: left;
+  margin: 1rem auto 2rem;
+  max-width: 1000px;
+  text-align: center;
   padding: 1em 0;
   font-size: 14px;
-  line-height: 1.5;
   color: #312947;
   opacity: 0.9;
+}
+
+.text-container .main-text {
+  font-size: 16px;
 }
 
 .text-container .personal-data {
@@ -449,26 +464,31 @@ footer {
   header .nav-toggle {
     display: none;
   }
-  header .menu-desktop {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  header .menu-desktop a {
-    color: black;
-  }
   nav {
+    padding-block: 3rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  nav .menu-desktop {
+  nav .menu {
+    all: unset;
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  nav .menu-desktop li {
+  nav .menu li {
+    list-style: none;
+    margin: 0;
     margin-right: 2em;
     text-transform: uppercase;
     font-size: 14px;
@@ -476,10 +496,10 @@ footer {
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
-  nav .menu-desktop li:hover {
+  nav .menu li:hover {
     text-decoration: underline;
   }
-  nav .menu-desktop a {
+  nav .menu a {
     color: #8b858e;
   }
   .img-text {
@@ -496,13 +516,13 @@ footer {
             align-items: center;
     width: 100%;
     background: #312947;
+    -webkit-box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.3);
+            box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.3);
   }
   .img-text .img-container {
     min-width: 60%;
     max-height: 450px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-right: 2rem;
+    margin: 0rem;
   }
   .img-text .image {
     -o-object-fit: cover;
@@ -527,6 +547,43 @@ footer {
         -ms-flex: 1;
             flex: 1;
     margin: 0 2rem;
+  }
+  .grid-container {
+    width: 100%;
+    -ms-grid-columns: (minmax(450px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+  }
+  .grid-container .item {
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+    width: 100%;
+    cursor: pointer;
+  }
+  .grid-container .item:hover {
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+  }
+  .grid-container .item.clicked {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    z-index: 100;
+  }
+  .grid-container img {
+    height: 100%;
+  }
+  .top-btn:hover {
+    background: black;
+  }
+  .booking-btn:hover {
+    background: #2b272f;
+    color: white;
+  }
+  .text-container .text {
+    text-align: left;
   }
 }
 /*# sourceMappingURL=style.css.map */
