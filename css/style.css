@@ -25,7 +25,6 @@ h6 {
 
 img {
   max-width: 100%;
-  max-height: 100%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -256,6 +255,12 @@ main {
   position: relative;
 }
 
+.text-container,
+.price-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .img-text {
   background-color: #312947;
 }
@@ -412,7 +417,6 @@ footer {
 }
 
 .text-container {
-  background: #e2ebf3;
   padding: 1.5em;
   line-height: 1.6;
 }
@@ -455,12 +459,15 @@ footer {
 }
 
 @media only screen and (min-width: 800px) {
+  body {
+    text-align: left;
+  }
   header .logo {
     width: 40%;
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   header .nav-toggle {
     display: none;
@@ -600,8 +607,30 @@ footer {
     background: #2b272f;
     color: white;
   }
+  .price-container {
+    margin: 0 auto;
+    padding: 0;
+  }
+  .text-container,
+  .price-container {
+    text-align: left;
+    margin-top: 3rem;
+    padding: 0 10%;
+  }
+  .price-container h3 {
+    font-size: 1.5rem;
+  }
+  .price-container p {
+    text-align: left;
+  }
   .text-container .text {
     text-align: left;
+  }
+  .price-item-container {
+    gap: 1.5rem;
+  }
+  .price-item-container .price-item {
+    margin: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

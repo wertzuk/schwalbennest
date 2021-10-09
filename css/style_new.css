@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0.5em 1.5em;
+  -webkit-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
+}
+
+footer {
+  margin: 0;
+}
+
+.calendar-container {
+  display: none;
+  text-align: center;
+  width: 85%;
+  margin: 2rem auto;
+}
+
+.calendar-container .weekdays {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  margin: 0.5rem 0;
+}
+
+.calendar-container .weekdays > * {
+  font-size: 14px;
+}
+
+.calendar-container .days {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  gap: 0.1rem;
+}
+
+.calendar-container .days > * {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: transparent;
+}
+
+.marked {
+  background: rgba(255, 0, 0, 0.2) !important;
+}
+
+.form-container {
+  margin: auto;
+  padding: 1.5rem 1rem;
+  background: white;
+}
+
+.form-container .form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em 1em;
+  font-size: 14px;
+  background: white;
+}
+
+.form-container .form-row input,
+.form-container .form-row textarea {
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+  letter-spacing: 0.5px;
+}
+
+.form-container .form-row input {
+  height: 35px;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-style: inherit;
+  padding: 0 1em;
+  background: white;
+  margin: auto;
+}
+
+.form-container .form-row input::-webkit-input-placeholder {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.form-container .form-row input:-ms-input-placeholder {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.form-container .form-row input::-ms-input-placeholder {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.form-container .form-row input::placeholder {
+  font-style: italic;
+  font-size: 12px;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: #f5f3f3;
+  background: #f5f3f3;
+}
+
+.selected {
+  display: block !important;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+header {
+  position: relative;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em;
+}
+
+header .logo {
+  font-size: clamp(1.7rem, 5vw, 2.1rem);
+  font-weight: 700;
+  width: 80%;
+  line-height: 1.5;
+  font-family: "Bad Script", cursive;
+  text-align: left;
+}
+
+header .menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 100;
+  height: 100vh;
+  width: 100%;
+  background: rgba(43, 39, 47, 0.85);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 3rem;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+header .menu li {
+  margin-bottom: 3rem;
+}
+
+header .menu a {
+  color: white;
+}
+
+header .menu.show {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+header .close,
+header .hamburger {
+  display: none;
+}
+
+header ul {
+  padding: 2rem;
+}
+
+main > * + * {
+  padding: 0 10%;
+}
+
+.img-text {
+  background-color: #312947;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 400px;
+}
+
+.img-text__images {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  position: relative;
+  height: 65vw;
+}
+
+.img-text__images .image {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 500px;
+  z-index: 100;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.img-text__images image.active {
+  opacity: 1 !important;
+}
+
+.img-text__text {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  width: 100%;
+}
+
+.active {
+  opacity: 1;
+}
+/*# sourceMappingURL=style_new.css.map */
