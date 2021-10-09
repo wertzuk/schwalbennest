@@ -460,6 +460,7 @@ footer {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    font-size: 3rem;
   }
   header .nav-toggle {
     display: none;
@@ -487,6 +488,7 @@ footer {
             align-items: center;
   }
   nav .menu li {
+    position: relative;
     list-style: none;
     margin: 0;
     margin-right: 2em;
@@ -496,8 +498,24 @@ footer {
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
-  nav .menu li:hover {
-    text-decoration: underline;
+  nav .menu li::after {
+    content: "";
+    position: absolute;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: black;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+  }
+  nav .menu li:hover::after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
   nav .menu a {
     color: #8b858e;
