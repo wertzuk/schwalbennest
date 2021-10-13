@@ -429,7 +429,7 @@ footer {
 .text-container .text {
   margin: 1rem auto 2rem;
   max-width: 1000px;
-  text-align: center;
+  text-align: left;
   padding: 1em 0;
   font-size: 14px;
   color: #312947;
@@ -624,6 +624,8 @@ footer {
     pointer-events: none;
     opacity: 0;
     z-index: 10;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
   }
   .big-img img {
     position: absolute;
@@ -641,6 +643,8 @@ footer {
     z-index: 1;
     pointer-events: none;
     opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
   }
   .overlay.active,
   .big-img.active {
