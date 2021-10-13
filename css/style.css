@@ -401,6 +401,7 @@ footer {
 
 .item .description {
   position: absolute;
+  display: none;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -455,7 +456,9 @@ footer {
 }
 
 footer {
+  margin-top: 3rem;
   padding: 2em;
+  text-align: center;
 }
 
 @media only screen and (min-width: 800px) {
@@ -541,8 +544,8 @@ footer {
             align-items: center;
     width: 100%;
     background: #312947;
-    -webkit-box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.3);
-            box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
   }
   .img-text .img-container {
     min-width: 60%;
@@ -558,6 +561,8 @@ footer {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    font-size: 1.6rem;
+    line-height: 1.2;
   }
   .price-item-container {
     display: -webkit-box;
@@ -574,38 +579,73 @@ footer {
     margin: 0 2rem;
   }
   .grid-container {
-    width: 100%;
-    -ms-grid-columns: (minmax(450px, 1fr))[auto-fill];
-        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    gap: 0.3rem;
+    display: -ms-grid;
+    display: grid;
+    width: 80%;
+    margin: 3rem auto 0;
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    -ms-grid-rows: (250px)[auto-fit];
+        grid-template-rows: repeat(auto-fit, 250px);
+    gap: 2rem;
     margin-bottom: 1rem;
   }
   .grid-container .item {
+    position: relative;
     -webkit-transition: -webkit-transform 0.2s;
     transition: -webkit-transform 0.2s;
     transition: transform 0.2s;
     transition: transform 0.2s, -webkit-transform 0.2s;
-    width: 100%;
     cursor: pointer;
-  }
-  .grid-container .item:hover {
-    -webkit-transform: scale(1.01);
-            transform: scale(1.01);
-  }
-  .grid-container .item.clicked {
-    -webkit-transform: scale(2);
-            transform: scale(2);
-    z-index: 100;
+    -webkit-box-shadow: 5px 5px 18px rgba(0, 0, 0, 0.4);
+            box-shadow: 5px 5px 18px rgba(0, 0, 0, 0.4);
+    max-height: 250px;
   }
   .grid-container img {
+    width: 100%;
     height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
-  .top-btn:hover {
-    background: black;
+  .big-img {
+    position: fixed;
+    width: 70vw;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 5px solid white;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10;
   }
-  .booking-btn:hover {
-    background: #2b272f;
-    color: white;
+  .big-img img {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 50;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  .overlay {
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .overlay.active,
+  .big-img.active {
+    opacity: 1;
+    pointer-events: all;
   }
   .price-container {
     margin: 0 auto;
@@ -631,6 +671,13 @@ footer {
   }
   .price-item-container .price-item {
     margin: 0;
+  }
+  .top-btn:hover {
+    background: black;
+  }
+  .booking-btn:hover {
+    background: #2b272f;
+    color: white;
   }
 }
 /*# sourceMappingURL=style.css.map */
