@@ -30,25 +30,23 @@
     <main>
       <div class="form-container">
         <h3>Anfrageformular - Zimmernachweis</h3>
-        <form>
+        <form action="sending.php" method="post">
           <div class="form-row">
-            <!-- <label for="lastname">Name*</label> -->
             <input
               type="text"
-              name="lastname"
-              id="lastname"
-              placeholder="Name"
+              name="firstName"
+              id="firstName"
+              placeholder="Vorname"
               required
             />
           </div>
 
           <div class="form-row">
-            <!-- <label for="firstname">Vorname*</label> -->
             <input
               type="text"
-              name="firstname"
-              id="firstname"
-              placeholder="Vorname"
+              name="lastName"
+              id="lastName"
+              placeholder="Nachname"
               required
             />
           </div>
@@ -65,7 +63,6 @@
           </div>
 
           <div class="form-row">
-            <!-- <label for="plz">PLZ / Ort*</label> -->
             <input
               type="text"
               name="plz"
@@ -76,9 +73,8 @@
           </div>
 
           <div class="form-row">
-            <!-- <label for="telefon">Telefon*</label> -->
             <input
-              type="text"
+              type="tel"
               name="telefon"
               id="telefon"
               placeholder="Telefon*"
@@ -87,7 +83,6 @@
           </div>
 
           <div class="form-row">
-            <!-- <label for="email">E-Mail-Adresse*</label> -->
             <input
               type="email"
               name="email"
@@ -98,7 +93,32 @@
           </div>
 
           <div class="form-row">
-            <!-- <label for="erwachsene">Anzahl Erwachsener*</label> -->
+            <input
+              type="date"
+              id="start"
+              name="trip-start"
+              value=""
+              min="2021-10-14"
+              max="2023-12-31"
+              placeholder="Anreise*"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <input
+              type="date"
+              id="end"
+              name="trip-end"
+              value="Abreise"
+              min="2021-10-14"
+              max="2023-12-31"
+              placeholder="Abreise*"
+              required
+            />
+          </div>
+
+          <div class="form-row">
             <input
               type="text"
               name="erwachsene"
@@ -127,7 +147,9 @@
               placeholder="Kommentar"
             ></textarea>
           </div>
-          <button type="submit" class="btn booking-btn">Abschicken</button>
+          <button type="submit" class="btn booking-btn submit">
+            Abschicken
+          </button>
         </form>
       </div>
     </main>

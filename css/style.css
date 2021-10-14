@@ -99,6 +99,12 @@ footer {
   margin: auto;
   padding: 1.5rem 1rem;
   background: white;
+  margin-bottom: 5rem;
+}
+
+.form-container h3 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .form-container .form-row {
@@ -112,16 +118,17 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.5em 1em;
-  font-size: 14px;
   background: white;
 }
 
 .form-container .form-row input,
 .form-container .form-row textarea {
+  font-size: 14px;
   margin: auto;
   width: 100%;
   max-width: 600px;
   letter-spacing: 0.5px;
+  font-family: inherit;
 }
 
 .form-container .form-row input {
@@ -129,30 +136,47 @@ footer {
   outline: none;
   border: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  font-style: inherit;
   padding: 0 1em;
   background: white;
   margin: auto;
 }
 
 .form-container .form-row input::-webkit-input-placeholder {
-  font-style: italic;
   font-size: 12px;
 }
 
 .form-container .form-row input:-ms-input-placeholder {
-  font-style: italic;
   font-size: 12px;
 }
 
 .form-container .form-row input::-ms-input-placeholder {
-  font-style: italic;
   font-size: 12px;
 }
 
 .form-container .form-row input::placeholder {
-  font-style: italic;
   font-size: 12px;
+}
+
+.form-container .form-row input:focus {
+  border-color: rebeccapurple;
+}
+
+.form-container .form-row input[type="date"] {
+  color: transparent;
+}
+
+.form-container .form-row input[type="date"]:focus {
+  color: black;
+}
+
+.form-container .form-row input[type="date"]::before {
+  color: rgba(0, 0, 0, 0.8);
+  content: attr(placeholder) !important;
+  font-size: 12px;
+}
+
+.form-container .form-row input[type="date"]:focus::before {
+  content: "" !important;
 }
 
 body {
@@ -583,8 +607,8 @@ footer {
     display: grid;
     width: 80%;
     margin: 3rem auto 0;
-    -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    -ms-grid-columns: (minmax(310px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
     -ms-grid-rows: (250px)[auto-fit];
         grid-template-rows: repeat(auto-fit, 250px);
     gap: 2rem;
@@ -606,6 +630,14 @@ footer {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+  }
+  .grid-container img:hover {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
   }
   .big-img {
     position: fixed;

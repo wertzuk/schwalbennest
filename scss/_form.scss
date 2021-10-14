@@ -2,37 +2,56 @@
   margin: auto;
   padding: 1.5rem 1rem;
   background: white;
-  // box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-  // border-radius: 10px;
-  // width: 70%;
+  margin-bottom: 5rem;
+  h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 
   .form-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5em 1em;
-    font-size: 14px;
     background: white;
     input,
     textarea {
+      font-size: 14px;
       margin: auto;
       width: 100%;
       max-width: 600px;
       letter-spacing: 0.5px;
+      font-family: inherit;
     }
     input {
       height: 35px;
       outline: none;
       border: none;
       border: 1px solid rgba(0, 0, 0, 0.2);
-      font-style: inherit;
       padding: 0 1em;
       background: white;
       margin: auto;
       &::placeholder {
-        font-style: italic;
         font-size: 12px;
       }
+      &:focus {
+        border-color: rebeccapurple;
+      }
+    }
+    input[type="date"] {
+      color: transparent;
+    }
+    input[type="date"]:focus {
+      color: black;
+    }
+    input[type="date"]::before {
+      color: rgba(0, 0, 0, 0.8);
+      content: attr(placeholder) !important;
+      font-size: 12px;
+      // margin-right: 2em;
+    }
+    input[type="date"]:focus::before {
+      content: "" !important;
     }
   }
 }

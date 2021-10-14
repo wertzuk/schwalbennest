@@ -31,3 +31,9 @@ navToggle.addEventListener("click", () => {
   menu.classList.toggle("show");
   document.body.classList.toggle("no-scroll");
 });
+
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+  // e.preventDefault();
+  console.log("submitted");
+});
