@@ -119,11 +119,18 @@ footer {
           align-items: center;
   padding: 0.5em 1em;
   background: white;
+  position: relative;
+}
+
+.form-container .form-row label {
+  position: absolute;
+  top: 0;
+  left: 50%;
 }
 
 .form-container .form-row input,
 .form-container .form-row textarea {
-  font-size: 14px;
+  font-size: 13px;
   margin: auto;
   width: 100%;
   max-width: 600px;
@@ -132,7 +139,8 @@ footer {
 }
 
 .form-container .form-row input {
-  height: 35px;
+  position: relative;
+  height: 40px;
   outline: none;
   border: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -142,47 +150,36 @@ footer {
 }
 
 .form-container .form-row input::-webkit-input-placeholder {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .form-container .form-row input:-ms-input-placeholder {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .form-container .form-row input::-ms-input-placeholder {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .form-container .form-row input::placeholder {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .form-container .form-row input:focus {
   border-color: rebeccapurple;
 }
 
-.form-container .form-row input[type="date"] {
-  color: transparent;
-}
-
-.form-container .form-row input[type="date"]:focus {
-  color: black;
-}
-
-.form-container .form-row input[type="date"]::before {
-  color: rgba(0, 0, 0, 0.8);
-  content: attr(placeholder) !important;
-  font-size: 12px;
-}
-
-.form-container .form-row input[type="date"]:focus::before {
-  content: "" !important;
-}
-
 body {
   font-family: "Karla", sans-serif;
   text-align: center;
   background: #f5f3f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .selected {
@@ -359,7 +356,6 @@ footer {
 }
 
 .text p {
-  text-align: center;
   font-size: 14px;
 }
 
@@ -416,7 +412,6 @@ footer {
 .grid-container {
   display: -ms-grid;
   display: grid;
-  grid-gap: 0.3rem;
 }
 
 .item {
@@ -431,7 +426,6 @@ footer {
   width: 100%;
   text-align: left;
   color: white;
-  padding-bottom: 0.3em;
   padding-left: 0.5rem;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.6)));
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
@@ -480,7 +474,8 @@ footer {
 }
 
 footer {
-  margin-top: 3rem;
+  margin-block: auto;
+  margin-top: 2rem;
   padding: 2em;
   text-align: center;
 }
@@ -527,7 +522,7 @@ footer {
     margin: 0;
     margin-right: 2em;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bolder;
     -webkit-transition: 0.3s;
     transition: 0.3s;

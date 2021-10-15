@@ -37,3 +37,14 @@ form.addEventListener("submit", (e) => {
   // e.preventDefault();
   console.log("submitted");
 });
+
+const start = document.querySelector("#start");
+const end = document.querySelector("#end");
+
+start.addEventListener("focus", () => {
+  start.type = "date";
+});
+end.addEventListener("focus", () => {
+  end.type = "date";
+});
+console.log(start);
