@@ -107,6 +107,30 @@ footer {
   margin-bottom: 1rem;
 }
 
+.form-container form {
+  position: relative;
+}
+
+.form-container form .success-container {
+  opacity: 0;
+  pointer-events: none;
+  padding: 2rem;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.form-container form.success .success-container {
+  position: absolute;
+  pointer-events: all;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 11;
+  background: red;
+  opacity: 1;
+}
+
 .form-container .form-row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -167,6 +191,10 @@ footer {
 
 .form-container .form-row input:focus {
   border-color: rebeccapurple;
+}
+
+.success {
+  position: absolute;
 }
 
 body {

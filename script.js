@@ -33,9 +33,24 @@ navToggle.addEventListener("click", () => {
 });
 
 const form = document.querySelector("form");
-form.addEventListener("submit", (e) => {
-  // e.preventDefault();
-  console.log("submitted");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const searchParams = new URLSearchParams();
+  data.forEach((item) => {
+    searchParams.append(item[0], item[1]);
+  });
+
+  const response = await fetch("sending.php", {
+    method: "POST",
+    body: data,
+  });
+  // const text = await response.text();
+  console.log(response);
+  if (response.ok) {
+    console.log("ok");
+    form.classList.add("success");
+  }
 });
 
 const start = document.querySelector("#start");
@@ -47,4 +62,3 @@ start.addEventListener("focus", () => {
 end.addEventListener("focus", () => {
   end.type = "date";
 });
-console.log(start);
