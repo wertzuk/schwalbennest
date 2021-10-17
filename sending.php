@@ -5,11 +5,6 @@
     $betreff = 'Anfrage Ferienwohnung';
     // $from = htmlspecialchars($_POST['email']);
 
-    $headers =  'MIME-Version: 1.0' . "\r\n"; 
-$headers .= 'From: Your name <info@address.com>' . "\r\n";
-$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
-    
     $firstname = htmlspecialchars($_POST['firstName']);
     $lastname = htmlspecialchars($_POST['lastName']);
     $email = htmlspecialchars($_POST['email']);
@@ -24,20 +19,20 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
     $comment = htmlspecialchars($_POST['comment']);
     
     $content = "Vorname: " . $firstname . 
-             "<br>Nachname: " . $lastname .
-             "<br>E-Mail: " . $email .
-             "<br>Straße: " . $street .
-             "<br>Ort: " . $plz .
-             "<br>Von: " . $startDate .
-             "<br>Bis: " . $endDate .
-             "<br>Erwachsene: " . $erwachsene .
-             "<br>Kinder: " . $children .
-             "<br>comment: " . $comment;
+             "\r\nNachname: " . $lastname .
+             "\r\nE-Mail: " . $email .
+             "\r\nStraße: " . $street .
+             "\r\nOrt: " . $plz .
+             "\r\nVon: " . $startDate .
+             "\r\nBis: " . $endDate .
+             "\r\nErwachsene: " . $erwachsene .
+             "\r\nKinder: " . $children .
+             "\r\ncomment: " . $comment;
 
     echo $content;
 
     
-    mail($to, $betreff, $content);
+    // mail($to, $betreff, $content);
    
     // echo $firstname . "\n";
    

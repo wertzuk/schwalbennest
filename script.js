@@ -32,7 +32,9 @@ navToggle.addEventListener("click", () => {
   document.body.classList.toggle("no-scroll");
 });
 
+const formContainer = document.querySelector(".form-container");
 const form = document.querySelector("form");
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = new FormData(form);
@@ -45,10 +47,8 @@ form.addEventListener("submit", async (e) => {
     method: "POST",
     body: data,
   });
-  // const text = await response.text();
   console.log(response);
   if (response.ok) {
-    console.log("ok");
     form.classList.add("success");
   }
 });
